@@ -9,3 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 route::get('/cliente', [ClienteController::class, 'listar']);
+route::get('/cliente/{id}', [ClienteController::class, 'listaPeloId']);
+route::post('/cliente', [ClienteController::class, 'salvar']);
+route::put('/cliente/{id}', [ClienteController::class,  'editar']);
+route::delete('/cliente/{id}',[ClienteController::class, 'deletar']);
